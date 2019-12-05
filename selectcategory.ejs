@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <form name="f1" method="post" action="/SelectCategory">
+            Category
+            <select name="catcombo" onchange="change_select(this.value)">
+                    <option>
+                        Category
+                    </option>
+                    <% cats.forEach(Category=>{%>
+                    <option value="<%= Category._id %>">
+                        <%= Category.cat_name %>
+                    </option>
+                    <% });%>
+            </select> 
+            <br>
+            <input type="submit" value="submit" name="submit">
+            <input type="button" name="btn">
+        </form>
+    </body>
+
+</html>
+<script>
+function change_select(data)
+{
+    //var catid=document.getElementById('catcombo').value;
+    // alert( '<%= cats %>');
+    alert(data.value);
+}
+</script>
